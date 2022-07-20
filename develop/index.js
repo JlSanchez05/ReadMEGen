@@ -112,3 +112,29 @@ const questions = [{
   }
 },
 ]; 
+
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, error => {
+    if (error) {
+      return console.log('Error Is Occuring ' + error);
+    }
+  })
+}
+
+
+const createReadMe = util.promisify(writeToFile);
+
+async function createReadMeFile() {
+  try {
+    const userAnswers = await inquirer.prompt(questions);
+    console.log('Data Is Being Proccessed', userAnswers);
+    const myMarkdown = generateMarkdown(userAnswers);
+    console.log(myMarkdown);
+    await createReadMe('README2.md', myMarkdown);
+    
+  } catch (error) {
+    console.log('Error ' + error);
+  }
+};
+
+createReadMeFile()
