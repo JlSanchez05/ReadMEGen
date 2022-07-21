@@ -27,86 +27,31 @@ function generateMarkdown(data) {
   
   let markdownTemplate =
       
-  `# ${data.title}
+  `#Title
+   ${data.title}
+
   ## Description
   ${data.description}
+
+  ## Contribution
+  ${data.contribution}
+
+  ## Installation
+  ${data.installation}
+
+   ## Email
+   ${data.email}
+
+    ## GitHub UserName
+  ${data.username}
+
+ 
+
   ![badge](https://img.shields.io/badge/license-${licenseOption}-brightorange)
-  You can access more badges and their purposes at [shields.io](https://shields.io)
+  You Can Access More Badges And Their Purposes At [shields.io](https://shields.io)
   `;
 
-  
-  let tableOfContents =
-  `## Table of Contents`;
-    if (data.installation) {
-      tableOfContents +=
-        `
-    * [Installation](#installation)`
-    };
-    if (data.instructions) {
-      tableOfContents +=
-        `
-    * [Usage](#usage)`
-    };
-    if (data.contribution) {
-      tableOfContents +=
-        `
-    * [Contribution](#contribution)`
-    };
-    if (data.testing) {
-      tableOfContents +=
-        `
-    * [Testing](#testing)`
-    };
-  
-    markdownTemplate += tableOfContents;
-  
-    markdownTemplate +=
-      `
-    * [Questions](#questions)`;
-    markdownTemplate +=
-      `
-    * [License](#license)
-      
-      `;
-  
-    if (data.installation) {
-      markdownTemplate +=
-        `
-  ## Installation
-      
-    _Follow these steps to properly install this application:_
-    ${data.installation}`
-    };
-  
-    if (data.instructions) {
-      markdownTemplate +=
-        `
-        
-  ## Usage
-    _Instructions for use:_
-    ${data.instructions}`
-    };
-  
- 
-    if (data.contribution) {
-      markdownTemplate +=
-        `
-        
-  ## Contribution
-    _If you would like to contribute, please adhere to these guidelines:_
-    ${data.contribution}`
-    };
-    
-    markdownTemplate +=
-      `
-      
-  ## License
-        
-    _This application has the ${data.license}._
-        
-    For more information please view the [license description](${licenseLink}).
-    
-    `;
+
     return markdownTemplate;
   }
   

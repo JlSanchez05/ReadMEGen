@@ -33,40 +33,20 @@ const questions = [{
     }
   }
   },
-{
-  type: 'confirm',
-  name: 'confirmInstallation',
-  message: 'Is There An Installation Process?'
-  },
+
 {
   type: 'input',
   name: 'installation',
   message: 'Please List Installation Instructions',
-  when: ({ confirmInstallation }) => {
-    if (confirmInstallation) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+ 
 },
 
-{
-  type: 'confirm',
-  name: 'confirmContribution',
-  message: 'May Other Developers Contribute To Your Repository?'
-},
+
 {
   type: 'input',
   name: 'contribution',
   message: 'Please Give instructions On How Other Developers May Contribute To Your Project',
-  when: ({ confirmContribution }) => {
-    if (confirmContribution) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+ 
 },
 
 {
